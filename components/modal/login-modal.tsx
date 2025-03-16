@@ -35,6 +35,11 @@ const LoginSchema = z.object({
     })
 });
 
+type LoginResponse = {
+    error?: string;
+    success?: string;
+};
+
 type FormValues = z.infer<typeof LoginSchema>;
 
 // Form fields configuration
@@ -95,8 +100,8 @@ export const LoginModal = () => {
 
         startTransition(() => {
             login(values)
-            // @typescript-eslint/no-explicit-any
-                .then((data: any) => {
+            
+                .then((data: LoginResponse) => {
                     if (data?.error) {
                         setError(data.error);
                     }
