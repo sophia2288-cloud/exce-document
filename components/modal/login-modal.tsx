@@ -95,6 +95,7 @@ export const LoginModal = () => {
 
         startTransition(() => {
             login(values)
+            // @typescript-eslint/no-explicit-any
                 .then((data: any) => {
                     if (data?.error) {
                         setError(data.error);
