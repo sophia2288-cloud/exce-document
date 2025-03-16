@@ -14,7 +14,7 @@ const Sidebar = () => {
                     </div>
                     <div className='mt-10'>
                         <h4 className='text-white text-lg'>Recent</h4>
-                        <p className='text-xs mt-8 text-white font-medium'>Next time you come back here you'll see  your list of recently opened documents</p>
+                        <p className='text-xs mt-8 text-white font-medium'> Next time you come back here you&apos;ll see your list of recently opened documents</p>
                     </div>
                 </div>
                 <div className='flex gap-x-4 border-b-[1px]'>

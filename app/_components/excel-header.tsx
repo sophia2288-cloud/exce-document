@@ -1,6 +1,5 @@
-import { Button } from '@/components/ui/button';
 import { useLoginModal } from '@/hooks/use-login-modal';
-import { ArrowUpFromLine, Cloudy } from 'lucide-react';
+import { ArrowUpFromLine } from 'lucide-react';
 import React from 'react';
 
 const ExcelHeader = () => {

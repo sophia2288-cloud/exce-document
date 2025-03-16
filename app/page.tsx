@@ -11,10 +11,10 @@ export default function Home() {
 
   useEffect(() => {
     onOpen()
-  }, [])
+  }, [onOpen])
 
   return (
-    <div className="">
+    <div className="" onClick={() => onOpen()}>
       <ExcelHeader />
       <HeroImage />
     </div>

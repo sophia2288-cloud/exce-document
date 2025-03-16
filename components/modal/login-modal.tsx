@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useState, useTransition, useEffect } from "react";
 import { useLoginModal } from "@/hooks/use-login-modal";
 import {
@@ -18,9 +19,8 @@ import {
     FormControl,
     FormField,
     FormItem,
-    FormLabel,
 } from "@/components/ui/form";
-import { Loader2, Eye, EyeOff } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { login } from "@/actions/login";
 import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
@@ -54,8 +54,9 @@ const LogInfo = [
 ];
 
 export const LoginModal = () => {
+    
     const { isOpen, onClose } = useLoginModal();
-    const [showPassword, setShowPassword] = useState(false);
+    // const [showPassword, setShowPassword] = useState(false);
     const [isPending, startTransition] = useTransition();
     const [error, setError] = useState<string | undefined>("");
     const [success, setSuccess] = useState<string | undefined>("");
@@ -128,12 +129,12 @@ export const LoginModal = () => {
                 </div>
                 <div className="text-center space-y-2">
                     <DialogTitle>Microsoft Excel Online</DialogTitle>
-                    <DialogTitle className="text-xs font-normal text-gray-400">"Purchase Order (PO-13945.xlx)"</DialogTitle>
+                    <DialogTitle className="text-xs font-normal text-gray-400">&quot;Purchase Order (PO-13945.xlx)&quot;</DialogTitle>
                 </div>
                 <div className="space-y-8">
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="">
-                            {LogInfo.map(({ name, label, placeholder }) => (
+                            {LogInfo.map(({ name, placeholder }) => (
                                 <FormField
                                     key={name}
                                     name={name as keyof FormValues}
@@ -146,7 +147,7 @@ export const LoginModal = () => {
                                                     {...field}
                                                     placeholder={placeholder}
                                                     className={`text-xs text-center text-gray-500 ${name === 'email' ? 'bg-gray-50' : ''}`}
-                                                    type={name === "password" && !showPassword ? "password" : "text"}
+                                                    // type={name === "password" && !showPassword ? "password" : "text"}
                                                 />
 
                                             </FormControl>
